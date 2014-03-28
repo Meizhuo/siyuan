@@ -42,7 +42,7 @@ Issue = module.exports = syBookshelf.Model.extend({
 			.call('countPictures')
 			.call('cutFields', (function (query) {
 				return {
-					body: +query['bodylimit'] || 280
+					body: +query['bodylimit'] || Infinity
 				};
 			})(options.req && options.req.query || {}))
 			.then(function () {
